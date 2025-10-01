@@ -1,6 +1,7 @@
 #
-# Sin-Yaw Wang <swang24@scu.edu>
-# For CSEN79 Exercice
+# Names: Javely Benitez, Troy Edwards, Ashley Kaur, Anjie Obasunloye, Joy Zhu
+# Emails: jtejedabenitez@scu.edu, tedwards2@scu.edu, akaur3@scu.edu, aobasunloye@scu.edu, jhzhu@scu.edu
+# For CSEN79 HW1
 # 
 TMPMAKE=tmpMake
 STD=-std=c++20
