@@ -1,5 +1,6 @@
 /*
- * Sin-Yaw Wang <swang24@scu.edu>
+ * Names: Javely Benitez, Troy Edwards, Ashley Kaur, Anjie Obasunloye, Joy Zhu
+ * Emails: jtejedabenitez@scu.edu, tedwards2@scu.edu, akaur3@scu.edu, aobasunloye@scu.edu, jhzhu@scu.edu
  *
  * Assignment: Rational Number
  */
