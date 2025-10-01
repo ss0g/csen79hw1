@@ -5,6 +5,7 @@
  * Assignment: Rational Number
  */
 #include <cstdio>
+#include <limits>
 #include <numeric>
 #include <algorithm>
 #include <iomanip>
@@ -15,6 +16,8 @@
 using namespace std;	// for ostream
 
 namespace csen79 {
+  constexpr rat_t MaxRatT = std::numeric_limits<rat_t>::max();
+
 	/*
 	 * Construct a rational number.  Accept one or two integers.
 	 * If only one, assume the denominator is 1.
@@ -50,7 +53,13 @@ namespace csen79 {
       throw std::invalid_argument("denominator cannot be negative");
     }
     if (den == n1.den) {
+      if (num >= MaxRatT - n1.num) {
+        throw std::overflow_error("argument too large");
+      }
       return RatNum(num + n1.num, den);
+    }
+    if (num >= MaxRatT / n1.den || n1.num >= MaxRatT / den) {
+      throw std::overflow_error("argument too large");
     }
     return RatNum(num * n1.den + n1.num * den, den * n1.den);
   }
