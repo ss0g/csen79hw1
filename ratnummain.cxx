@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
 		cout << "op1+op2=" << z << endl;
 		z = x - y;
 		cout << "op1-op2=" << z << endl;
+		/*
 		z = x * y;
 		cout << "op1*op2=" << z << endl;
 		z = x / y;
@@ -50,6 +51,7 @@ int main(int argc, char *argv[])
 			cout << "(op1<op2) == True" << endl;
 		if (x == static_cast<const RatNum>(y))
 			cout << "(op1==op2) == True" << endl;
+		*/
 	}
 	return EXIT_SUCCESS;
 }
