@@ -40,9 +40,9 @@ int main(int argc, char *argv[])
 		cout << "op2=" << y << endl;
 		z = x + y;
 		cout << "op1+op2=" << z << endl;
+		/*
 		z = x - y;
 		cout << "op1-op2=" << z << endl;
-		/*
 		z = x * y;
 		cout << "op1*op2=" << z << endl;
 		z = x / y;
