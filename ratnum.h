@@ -8,6 +8,10 @@
 #define RATNUM_H
 
 using rat_t = int;
+
+constexpr rat_t MaxRat = std::numeric_limits<rat_t>::max();
+constexpr rat_t MinRat = std::numeric_limits<rat_t>::min();
+
 namespace csen79 {
 	class RatNum {
 	public:
