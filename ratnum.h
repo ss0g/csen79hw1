@@ -4,8 +4,8 @@
  *
  * Assignment: Rational Number
  */
-#ifndef RATNAM_H
-#define RATNAM_H
+#ifndef RATNUM_H
+#define RATNUM_H
 
 using rat_t = int;
 namespace csen79 {
