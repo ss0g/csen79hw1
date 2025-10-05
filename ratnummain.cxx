@@ -32,14 +32,22 @@ int main(int argc, char *argv[])
 	rat_t n2, d2;
 	int i = 0;
 	while (loop-- >= 0 && (cin >> n1 >> d1) && (cin >> n2 >> d2)) { 
-		cout << "#" << i++ << ": " << endl;
-		x = RatNum(n1, d1);
-		y = RatNum(n2, d2);
-		RatNum z;
-		cout << "op1=" << x << endl;
-		cout << "op2=" << y << endl;
-		z = x + y;
-		cout << "op1+op2=" << z << endl;
+		try {
+			cout << "#" << i++ << ": " << endl;
+			x = RatNum(n1, d1);
+			y = RatNum(n2, d2);
+			RatNum z;
+			cout << "op1=" << x << endl;
+			cout << "op2=" << y << endl;
+			z = x + y;
+			cout << "op1+op2=" << z << endl;
+		}
+		catch (const std::invalid_argument &e)
+			cerr << "error - invalid number: " << e.what() << endl;
+		catch (const std::overflow_error &e)
+			cerr << "error - overflow: " << e.what() << endl;
+		catch (const std::runtime_error &e)
+			cerr << "error - couldn't run: " << e.what() << endl;
 		/*
 		z = x - y;
 		cout << "op1-op2=" << z << endl;
