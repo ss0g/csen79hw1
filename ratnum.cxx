@@ -25,7 +25,11 @@ namespace csen79 {
 	 */
 	RatNum::RatNum(rat_t n, rat_t d) : num(n), den(d) {
 		if (d == 0)
-			num = 0;
+			throw std::invalid_argument("denominator cannot be zero");
+		else if (d < 0) {
+			n = -n;
+			d = -d;
+		}
 		else {
 			int todivide = gcd(abs(n), d);
 			num = n/todivide;
