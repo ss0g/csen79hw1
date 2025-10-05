@@ -53,22 +53,30 @@ namespace csen79 {
     	if (den == 0 || n1.den == 0) {
       		throw std::invalid_argument("denominator cannot be zero");
     	}
+		if (den < MinRat || n1.den < MinRat) {
+			throw std::overflow_error("denominator too small");
+		}
+		if (num > MaxRat || n1.num > MaxRat) {
+			throw std::overflow_error("numerator too large");
+		}
     	if (den == n1.den) {
       		if (num >= MaxRat - n1.num) {
         		throw std::overflow_error("argument too large");
       		}
-      	return RatNum(num + n1.num, den);
+      		return RatNum(num + n1.num, den);
     	}
-    	if (num >= MaxRat / n1.den || n1.num >= MaxRat / den) {
+    	if (num > MaxRat / n1.den || n1.num > MaxRat / den) {
       		throw std::overflow_error("argument too large");
     	}
     	return RatNum(num * n1.den + n1.num * den, den * n1.den);
 	}
 
+	/*
 	RatNum RatNum::operator-(RatNum const &n1) { return RatNum();}
 	RatNum RatNum::operator*(RatNum const &n1) { return RatNum();}
 	RatNum RatNum::operator/(RatNum const &n1) { return RatNum();}
 	bool RatNum::operator<(RatNum const &n1) { return true;}
 	bool RatNum::operator==(RatNum const &n1) {return true;}
+	*/
 }
 
