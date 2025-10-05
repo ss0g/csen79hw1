@@ -50,7 +50,7 @@ namespace csen79 {
 
 	RatNum RatNum::operator+(RatNum const &n1) {
     if (den == 0 || n1.den == 0) {
-      throw std::invalid_argument("denominator cannot be negative");
+      throw std::invalid_argument("denominator cannot be zero");
     }
     if (den == n1.den) {
       if (num >= MaxRatT - n1.num) {
