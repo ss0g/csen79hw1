@@ -26,15 +26,14 @@ namespace csen79 {
 	RatNum::RatNum(rat_t n, rat_t d) : num(n), den(d) {
 		if (d == 0)
 			throw std::invalid_argument("denominator cannot be zero");
-		else if (d < 0) {
+		if (d < 0) {
 			n = -n;
 			d = -d;
 		}
-		else {
-			int todivide = gcd(abs(n), d);
-			num = n/todivide;
-			den = d/todivide;
-		}
+		
+		int todivide = gcd(abs(n), d);
+		num = n/todivide;
+		den = d/todivide;
 	}
 
 	// trivial implementaion of GCD
@@ -53,20 +52,20 @@ namespace csen79 {
 	}
 
 	RatNum RatNum::operator+(RatNum const &n1) {
-    if (den == 0 || n1.den == 0) {
-      throw std::invalid_argument("denominator cannot be zero");
-    }
-    if (den == n1.den) {
-      if (num >= MaxRatT - n1.num) {
-        throw std::overflow_error("argument too large");
-      }
-      return RatNum(num + n1.num, den);
-    }
-    if (num >= MaxRatT / n1.den || n1.num >= MaxRatT / den) {
-      throw std::overflow_error("argument too large");
-    }
-    return RatNum(num * n1.den + n1.num * den, den * n1.den);
-  }
+    	if (den == 0 || n1.den == 0) {
+      		throw std::invalid_argument("denominator cannot be zero");
+    	}
+    	if (den == n1.den) {
+      		if (num >= MaxRatT - n1.num) {
+        		throw std::overflow_error("argument too large");
+      		}
+      	return RatNum(num + n1.num, den);
+    	}
+    	if (num >= MaxRatT / n1.den || n1.num >= MaxRatT / den) {
+      		throw std::overflow_error("argument too large");
+    	}
+    	return RatNum(num * n1.den + n1.num * den, den * n1.den);
+	}
 
 	RatNum RatNum::operator-(RatNum const &n1) { return RatNum();}
 	RatNum RatNum::operator*(RatNum const &n1) { return RatNum();}
