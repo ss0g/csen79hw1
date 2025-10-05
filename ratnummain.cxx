@@ -37,10 +37,10 @@ int main(int argc, char *argv[])
 			x = RatNum(n1, d1);
 			y = RatNum(n2, d2);
 			RatNum z;
-			cout << "op1=" << x << endl;
-			cout << "op2=" << y << endl;
+			cout << "op1 = " << x << endl;
+			cout << "op2 = " << y << endl;
 			z = x + y;
-			cout << "op1+op2=" << z << endl;
+			cout << "op1 + op2 = " << z << endl;
 		}
 		catch (const std::invalid_argument &e)
 			cerr << "error - invalid number: " << e.what() << endl;
