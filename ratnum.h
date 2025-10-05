@@ -21,11 +21,13 @@ namespace csen79 {
 
 		// These are member functions
 		RatNum operator+(RatNum const &n1);
+		/*
 		RatNum operator-(RatNum const &n1);
 		RatNum operator*(RatNum const &n1);
 		RatNum operator/(RatNum const &n1);
 		bool operator<(RatNum const &n1);
 		bool operator==(RatNum const &n1);
+		*/
 
 	private:
 		rat_t num;
