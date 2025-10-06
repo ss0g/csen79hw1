@@ -82,10 +82,10 @@ namespace csen79 {
 		 * 2. den * n1.den <= MaxRat  (all denominators are positive at this point)
 		*/
 		temp_64 = num * n1.den;
-		if (num > 0 && (temp_64 > MaxRat)) {	// check num * n1.den <= MaxRat
+		if (temp_64 > MaxRat) {	// check num * n1.den <= MaxRat
 			throw std::overflow_error("Error 5: argument overflow");
 		}
-		if (num < 0 && (temp_64 < MinRat)) {	// check MinRat <= num * n1.den
+		if (temp_64 < MinRat) {	// check MinRat <= num * n1.den
 			throw std::underflow_error("Error 6: argument underflow");
 		}
 		temp_64 = n1.num * den;
